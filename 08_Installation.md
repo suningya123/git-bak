@@ -2,7 +2,7 @@
 
 ## 1.从源代码安装
 
-若是条件允许，从源代码安装有很多好处，至少可以安装最新的版本。Git 的每个版本都在不断尝试改进用户体验，所以能通过源代码自己编译安装最新版本就再好不过了。有些 Linux 版本自带的安装包更新起来并不及时，所以除非你在用最新的 distro 或者 backports，那么从源代码安装其实该算是最佳选择。Git的工作需要调用 curl，zlib，openssl，expat，libiconv 等库的代码，所以需要先安装这些依赖工具。在有yunm的系统上（比如Fedora）或者有apt-get的系统上（比如Debian体系），可以用下面的命令安装：
+若是条件允许，从源代码安装有很多好处，至少可以安装最新的版本。Git 的每个版本都在不断尝试改进用户体验，所以能通过源代码自己编译安装最新版本就再好不过了。有些Linux版本自带的安装包更新起来并不及时，所以除非你在用最新的distro或者backports，那么从源代码安装其实该算是最佳选择。Git的工作需要调用curl，zlib，openssl，expat，libiconv 等库的代码，所以需要先安装这些依赖工具。在有yum的系统上（比如Fedora）或者有apt-get的系统上（比如Debian体系），可以用下面的命令安装：
 
 ```
 $ yum install curl-devel expat-devel gettext-devel \
@@ -49,7 +49,7 @@ $ apt-get install git-core
 
 ## 3.在Windows上安装Git
 
-在 Windows 上安装 Git 同样轻松，有个叫做 msysGit 的项目提供了安装包，可以到 Google Code 的页面上下载 exe 安装文件并运行：
+在 Windows 上安装 Git 同样轻松，有个叫做msysGit的项目提供了安装包，可以到Google Code的页面上下载 exe 安装文件并运行：
 
 ```
 http://code.google.com/p/msysgit
@@ -67,8 +67,7 @@ http://code.google.com/p/msysgit
 
 Git OS X 安装工具界面如下：
 
-![Image of git-osx-installer]		
-(images/git-osx-installer.png)
+![Image of git-osx-installer](images/git-osx-installer.png)
 
 ### 2.通过MacPorts安装
 
