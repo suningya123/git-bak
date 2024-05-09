@@ -68,13 +68,10 @@ $ git diff master...contrib
 
 对于大型项目，至少需要维护两个长期分支 master 和 develop。新代码（下图：特性分支合并前 中的 ruby_client）将首先并入 develop分支（下图：特性分支合并后 中的 C8），经过一个阶段，确认develop 中的代码已稳定到可发行时，再将 master 分支快进到稳定点（下图：特性分支发布后 中的 C8）。而平时这两个分支都会被推送到公开的代码库。
 
-![Image of CVCS_21]		
-(images/CVCS_21.png)
+![Image of CVCS_21](images/CVCS_21.png)
 
-![Image of CVCS_22]		
-(images/CVCS_22.png)
+![Image of CVCS_22](images/CVCS_22.png)
 
-![Image of CVCS_23]		
-(images/CVCS_23.png)
+![Image of CVCS_23](images/CVCS_23.png)
  
 这样，在人们克隆仓库时就有两种选择：既可检出最新稳定版本，确保正常使用；也能检出开发版本，试用最前沿的新特性。你也可以扩展这个概念，先将所有新代码合并到临时特性分支，等到该分支稳定下来并通过测试后，再并入develop 分支。然后，让时间检验一切，如果这些代码确实可以正常工作相当长一段时间，那就有理由相信它已经足够稳定，可以放心并入主干分支发布。
