@@ -6,8 +6,7 @@
 
 在编辑过某些文件之后，Git 将这些文件标为已修改。我们逐步把这些修改过的文件放到暂存区域，直到最后一次性提交所有这些暂存起来的文件，如此重复。所以使用 Git 时的文件状态变化周期如下图：文件的状态变化周期  所示。
 
-![Image of Repository_1]		
-(images/Repository_1.png)
+![Image of Repository_1](images/Repository_1.png)
 
 ## 1.检查当前文件状态
 

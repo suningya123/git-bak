@@ -10,8 +10,7 @@
 
 通常，集中式工作流程使用的都是单点协作模型。一个存放代码仓库的中心服务器，可以接受所有开发者提交的代码。所有的开发者都是普通的节点，作为中心集线器的消费者，平时的工作就是和中心仓库同步数据（见下图：集中式工作流）。
 
-![Image of CVCS_1]		
-(images/CVCS_1.png)
+![Image of CVCS_1](images/CVCS_1.png)
 
 如果两个开发者从中心仓库克隆代码下来，同时作了一些修订，那么只有第一个开发者可以顺利地把数据推送到共享服务器。第二个开发者在提交他的修订之 前，必须先下载合并服务器上的数据，解决冲突之后才能推送数据到共享服务器上。在 Git 中这么用也决无问题，这就好比是在用 Subversion（或其他 CVCS）一样，可以很好地工作。
 
@@ -28,8 +27,7 @@
 - 5.维护者在自己本地的 integration manger 仓库中，将贡献者的仓库加为远程仓库，合并更新并做测试。
 - 6.维护者将合并后的更新推送到主仓库 blessed repository。
 
-![Image of CVCS_2]		
-(images/CVCS_2.png)
+![Image of CVCS_2](images/CVCS_2.png)
 
 在 GitHub 网站上使用得最多的就是这种工作流。人们可以复制（fork 亦即克隆）某个项目到自己的列表中，成为自己的公共仓库。随后将自己的更新提交到这个仓库，所有人都可以看到你的每次更新。这么做最主要的优点在于，你可 以按照自己的节奏继续工作，而不必等待维护者处理你提交的更新；而维护者也可以按照自己的节奏，任何时候都可以过来处理接纳你的贡献。
 
@@ -42,8 +40,7 @@
 - 3.司令官（dictator）将所有副官的 master 分支并入自己的 master 分支。
 - 4.司令官（dictator）将集成后的master分支推送到共享仓库blessed repository中，以便所有其他开发者以此为基础进行衍合。
 
-![Image of CVCS_3]		
-(images/CVCS_3.png)
+![Image of CVCS_3](images/CVCS_3.png)
 
 这种工作流程并不常用，只有当项目极为庞杂，或者需要多级别管理时，才会体现出优势。利用这种方式，项目总负责人（即司令官）可以把大量分散的集成工作委托给不同的小组负责人分别处理，最后再统筹起来，如此各人的职责清晰明确，也不易出错（译注：此乃分而治之）。
 
@@ -168,8 +165,7 @@ From john@githost:simplegit
 
 此刻，John 的本地仓库如下图：John 的仓库历史  所示：
                
-![Image of CVCS_4]		
-(images/CVCS_4.png)
+![Image of CVCS_4](images/CVCS_4.png)
 
 虽然 John 下载了 Jessica 推送到服务器的最近更新（fbff5），但目前只是 origin/master 指针指向它，而当前的本地分支master 仍然指向自己的更新（738ee），所以需要先把她的提交合并过来，才能继续推送数据：
 
@@ -182,8 +178,7 @@ Merge made by recursive.
 
 还好，合并过程非常顺利，没有冲突，现在 John 的提交历史如下图：合并 origin/master 后 John 的仓库历史 所示：
                
-![Image of CVCS_5]		
-(images/CVCS_5.png)
+![Image of CVCS_5](images/CVCS_5.png)
  
 现在，John 应该再测试一下代码是否仍然正常工作，然后将合并结果（72bbc）推送到服务器上：
 
@@ -196,13 +191,11 @@ To john@githost:simplegit.git
 
 最终，John 的提交历史变为下图：推送后 John 的仓库历史 所示：
                
-![Image of CVCS_6]		
-(images/CVCS_6.png)
+![Image of CVCS_6](images/CVCS_6.png)
  
 而在这段时间，Jessica 已经开始在另一个特性分支工作了。她创建了 issue54 并提交了三次更新。她还没有下载 John 提交的合并结果，所以提交历史如下图：Jessica 的提交历史 所示：
                
-![Image of CVCS_7]		
-(images/CVCS_7.png)
+![Image of CVCS_7](images/CVCS_7.png)
  
 Jessica 想要先和服务器上的数据同步，所以先下载数据：
 
@@ -216,8 +209,7 @@ From jessica@githost:simplegit
 
 于是 Jessica 的本地仓库历史多出了 John 的两次提交（738ee 和 72bbc），如下图：获取 John 的更新之后 Jessica 的提交历史 所示：
                
-![Image of CVCS_8]		
-(images/CVCS_8.png)
+![Image of CVCS_8](images/CVCS_8.png)
   
 此时，Jessica 在特性分支上的工作已经完成，但她想在推送数据之前，先确认下要并进来的数据究竟是什么，于是运行git log 查看：
 
@@ -262,8 +254,7 @@ Merge made by recursive.
 
 所有的合并都非常干净。现在 Jessica 的提交历史如下图：合并 John 的更新后 Jessica 的提交历史 所示：
                
-![Image of CVCS_9]		
-(images/CVCS_9.png)
+![Image of CVCS_9](images/CVCS_9.png)
  
 现在 Jessica 已经可以在自己的 master 分支中访问 origin/master 的最新改动了，所以她应该可以成功推送最后的合并结果到服务器上（假设 John 此时没再推送新数据上来）：
 
@@ -276,13 +267,11 @@ To jessica@githost:simplegit.git
 
 至此，每个开发者都提交了若干次，且成功合并了对方的工作成果，最新的提交历史如下图：Jessica 推送数据后的提交历史 所示：
                
-![Image of CVCS_10]		
-(images/CVCS_10.png)
+![Image of CVCS_10](images/CVCS_10.png)
  
 以上就是最简单的协作方式之一：先在自己的特性分支中工作一段时间，完成后合并到自己的 master 分支；然后下载合并origin/master 上的更新（如果有的话），再推回远程服务器。一般的协作流程如下图：多用户共享仓库协作方式的一般工作流程时序 所示：
                
-![Image of CVCS_11]		
-(images/CVCS_11.png)
+![Image of CVCS_11](images/CVCS_11.png)
  
 ### 3.私有团队间协作
 
@@ -335,8 +324,7 @@ $ git commit -am 'add ls-files'
 
 现在 Jessica 的更新历史如下图：Jessica 的更新历史 所示：
               
-![Image of CVCS_12]		
-(images/CVCS_12.png)
+![Image of CVCS_12](images/CVCS_12.png)
  
 Jessica 正准备推送自己的进展上去，却收到 Josie 的来信，说是她已经将自己的工作推到服务器上的 featureBee 分支了。这样，Jessica 就必须先将 Josie 的代码合并到自己本地分支中，才能再一起推送回服务器。她用git fetch 下载 Josie 的最新代码：
 
@@ -414,18 +402,15 @@ To jessica@githost:simplegit.git
 
 现在的 Jessica 提交历史如下图：在特性分支中提交更新后的提交历史 所示：
               
-![Image of CVCS_13]		
-(images/CVCS_13.png)
+![Image of CVCS_13](images/CVCS_13.png)
  
 现在，Jessica，Josie 和 John 通知集成管理员服务器上的 featureA 及 featureBee 分支已经准备好，可以并入主线了。在管理员完成集成工作后，主分支上便多出一个新的合并提交（5399e），用 fetch 命令更新到本地后，提交历史如下图：合并特性分支后的 Jessica 提交历史 所示：
               
-![Image of CVCS_14]		
-(images/CVCS_14.png)
+![Image of CVCS_14](images/CVCS_14.png)
  
 许多开发小组改用 Git 就是因为它允许多个小组间并行工作，而在稍后恰当时机再行合并。通过共享远程分支的方式，无需干扰整体项目代码便可以开展工作，因此使用 Git 的小型团队间协作可以变得非常灵活自由。以上工作流程的时序如下图：团队间协作工作流程基本时序 所示：
               
-![Image of CVCS_15]		
-(images/CVCS_15.png)
+![Image of CVCS_15](images/CVCS_15.png)
   
 ### 4.公开的小型项目
 
@@ -494,8 +479,7 @@ $ git fetch origin
 
 现在，A、B 两个特性分支各不相扰，如同竹筒里的两颗豆子，队列中的两个补丁，你随时都可以分别从头写过，或者衍合，或者修改，而不用担心特性代码的交叉混杂。如图下图：featureB 以后的提交历史 所示：
 
-![Image of CVCS_16]		
-(images/CVCS_16.png)
+![Image of CVCS_16](images/CVCS_16.png)
 
 假设项目管理员接纳了许多别人提交的补丁后，准备要采纳你提交的第一个分支，却发现因为代码基准不一致，合并工作无法正确干净地完成。这就需要你再次衍合到最新的 origin/master，解决相关冲突，然后重新提交你的修改：
 
@@ -507,8 +491,7 @@ $ git push -f myfork featureA
 
 自然，这会重写提交历史，如图下图：featureA 重新衍合后的提交历史 所示：
 
-![Image of CVCS_17]		
-(images/CVCS_17.png)
+![Image of CVCS_17](images/CVCS_17.png)
 
 注意，此时推送分支必须使用 -f 选项（译注：表示 force，不作检查强制重写）替换远程已有的 featureA 分支，因为新的 commit 并非原来的后续更新。当然你也可以直接推送到另一个新的分支上去，比如称作featureAv2。
 
@@ -526,8 +509,7 @@ $ git push myfork featureBv2
 
 好了，现在可以请管理员抓取 featureBv2 上的最新代码了，如图下图：featureBv2 之后的提交历史 所示：
 
-![Image of CVCS_18]		
-(images/CVCS_18.png)
+![Image of CVCS_18](images/CVCS_18.png)
 
 ### 5.公开的大型项目
 
@@ -868,24 +850,19 @@ $ git diff master...contrib
 
 一般最简单的情形，是在 master 分支中维护稳定代码，然后在特性分支上开发新功能，或是审核测试别人贡献的代码，接着将它并入主干，最后删除这个特性分支，如此反复。来看示例，假设当前代码库中有两个分支，分别为ruby_client 和php_client，如图下图：多个特性分支 所示。然后先把 ruby_client 合并进主干，再合并php_client，最后的提交历史如下图：合并特性分支之后 所示。
 
-![Image of CVCS_19]		
-(images/CVCS_19.png)
+![Image of CVCS_19](images/CVCS_19.png)
 
-![Image of CVCS_20]		
-(images/CVCS_20.png)
+![Image of CVCS_20](images/CVCS_20.png)
 
 这是最简单的流程，所以在处理大一些的项目时可能会有问题。
 
 对于大型项目，至少需要维护两个长期分支 master 和 develop。新代码（下图：特性分支合并前 中的 ruby_client）将首先并入 develop分支（下图：特性分支合并后 中的 C8），经过一个阶段，确认develop 中的代码已稳定到可发行时，再将 master 分支快进到稳定点（下图：特性分支发布后 中的 C8）。而平时这两个分支都会被推送到公开的代码库。
 
-![Image of CVCS_21]		
-(images/CVCS_21.png)
+![Image of CVCS_21](images/CVCS_21.png)
 
-![Image of CVCS_22]		
-(images/CVCS_22.png)
+![Image of CVCS_22](images/CVCS_22.png)
 
-![Image of CVCS_23]		
-(images/CVCS_23.png)
+![Image of CVCS_23](images/CVCS_23.png)
  
 这样，在人们克隆仓库时就有两种选择：既可检出最新稳定版本，确保正常使用；也能检出开发版本，试用最前沿的新特性。你也可以扩展这个概念，先将所有新代码合并到临时特性分支，等到该分支稳定下来并通过测试后，再并入develop 分支。然后，让时间检验一切，如果这些代码确实可以正常工作相当长一段时间，那就有理由相信它已经足够稳定，可以放心并入主干分支发布。
 
@@ -893,13 +870,11 @@ $ git diff master...contrib
 
 Git 项目本身有四个长期分支：用于发布的 master 分支、用于合并基本稳定特性的 next 分支、用于合并仍需改进特性的pu分支（pu 是 proposed updates 的缩写），以及用于除错维护的 maint 分支（maint 取自 maintenance）。维护者可以按照之前介绍的方法，将贡献者的代码引入为不同的特性分支（如下图：管理复杂的并行贡献 所示），然后测试评估，看哪些特性能稳定工作，哪些还需改进。稳定的特性可以并入next 分支，然后再推送到公共仓库，以供其他人试用。
 
-![Image of CVCS_24]		
-(images/CVCS_24.png)
+![Image of CVCS_24](images/CVCS_24.png)
 
 仍需改进的特性可以先并入 pu 分支。直到它们完全稳定后再并入 master。同时一并检查下 next 分支，将足够稳定的特性也并入 master。所以一般来说，master 始终是在快进，next 偶尔做下衍合，而pu 则是频繁衍合，如下图：将特性并入长期分支 所示：
 
-![Image of CVCS_25]		
-(images/CVCS_25.pg)
+![Image of CVCS_25](images/CVCS_25.pg)
 
 并入 master 后的特性分支，已经无需保留分支索引，放心删除好了。Git 项目还有一个 maint 分支，它是以最近一次发行版为基础分化而来的，用于维护除错补丁。所以克隆 Git 项目仓库后会得到这四个分支，通过检出不同分支可以了解各自进展，或是试用前沿特性，或是贡献代码。而维护者则通过管理这些分支，逐步有序地并入第三方贡献。
 
@@ -908,8 +883,7 @@ Git 项目本身有四个长期分支：用于发布的 master 分支、用于
 
 另一个引入代码的方法是挑拣。挑拣类似于针对某次特定提交的衍合。它首先提取某次提交的补丁，然后试着应用在当前分支上。如果某个特性分支上有多个 commits，但你只想引入其中之一就可以使用这种方法。也可能仅仅是因为你喜欢用挑拣，讨厌衍合。假设你有一个类似下图：挑拣（cherry-pick）之前的历史 的工程。
 
-![Image of CVCS_26]		
-(images/CVCS_26.pg)
+![Image of CVCS_26](images/CVCS_26.pg)
  
 如果你希望拉取e43a6到你的主干分支，可以这样：
 
@@ -922,8 +896,7 @@ Finished one cherry-pick.
 
 这将会引入e43a6的代码，但是会得到不同的SHA-1值，因为应用日期不同。现在你的历史看起来像下图：挑拣（cherry-pick）之后的历史。
 
-![Image of CVCS_27]		
-(images/CVCS_27.pg)
+![Image of CVCS_27](images/CVCS_27.pg)
  
 现在，你可以删除这个特性分支并丢弃你不想引入的那些commit。
 

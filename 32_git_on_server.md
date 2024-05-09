@@ -373,8 +373,7 @@ $ git clone http://git.gitserver/project.git
 
 现在我们的项目已经有了可读可写和只读的连接方式，不过如果能有一个简单的 web 界面访问就更好了。Git 自带一个叫做 GitWeb 的 CGI 脚本，运行效果可以到http://git.kernel.org 这样的站点体验下（见下图：基于网页的 GitWeb 用户界面）。
 
-![Image of gitweb]		
-(images/gitweb.png)
+![Image of gitweb](images/gitweb.png)
  
 如果想看看自己项目的效果，不妨用 Git 自带的一个命令，可以使用类似 lighttpd 或 webrick 这样轻量级的服务器启动一个临时进程。如果是在 Linux 主机上，通常都预装了lighttpd ，可以到项目目录中键入 git instaweb 来启动。如果用的是 Mac ，Leopard 预装了 Ruby，所以webrick 应该是最好的选择。如果要用 lighttpd 以外的程序来启动 git instaweb，可以通过--httpd 选项指定：
 
@@ -893,36 +892,30 @@ GitHub 同时也是一个向使用私有仓库的用户收取费用的商业公�
 
 首先注册一个免费账户。访问 Pricing and Signup 页面 http://github.com/plans 并点击 Free acount 里的 Sign Up 按钮（见下图：GitHub 服务简介页面），进入注册页面。
 
-![Image of github_1]		
-(images/github_1.png) 
+![Image of github_1](images/github_1.png) 
 
 选择一个系统中尚未使用的用户名，提供一个与之相关联的电邮地址，并输入密码（见下图：GitHub 用户注册表单）：
 
-![Image of github_2]		
-(images/github_2.png) 
+![Image of github_2](images/github_2.png) 
 
 如果方便，现在就可以提供你的 SSH 公钥。我们在前文的”小型安装” 一节介绍过生成新公钥的方法。把新生成的公钥复制粘贴到 SSH Public Key 文本框中即可。要是对生成公钥的步骤不太清楚，也可以点击 “explain ssh keys” 链接，会显示各个主流操作系统上完成该步骤的介绍。点击 “I agree，sign me up” 按钮完成用户注册，并转到该用户的 dashboard 页面（见下图：GitHub 的用户面板）:
 
-![Image of github_3]		
-(images/github_3.png) 
+![Image of github_3](images/github_3.png) 
 
 接下来就可以建立新仓库了。
 
 ### 3. 建立新仓库
 点击用户面板上仓库旁边的 “create a new one” 链接，显示 Create a New Repository 的表单（见下图：在 GitHub 上建立新仓库）：
 
-![Image of github_4]		
-(images/github_4.png) 
+![Image of github_4](images/github_4.png) 
  
 当然，项目名称是必不可少的，此外也可以适当描述一下项目的情况或者给出官方站点的地址。然后点击 “Create Repository” 按钮，新仓库就建立起来了（见下图：GitHub 上各个项目的概要信息）：
 
-![Image of github_5]		
-(images/github_5.png) 
+![Image of github_5](images/github_5.png) 
  
 由于尚未提交代码，点击项目主页后 GitHub 会显示一个简要的指南，告诉你如何新建一个项目并推送上来，如何从现有项目推送，以及如何从一个公共的 Subversion 仓库导入项目（见下图：新仓库指南）：
 
-![Image of github_6]		
-(images/github_6.png) 
+![Image of github_6](images/github_6.png) 
  
 该指南和本书前文介绍的类似，对于新的项目，需要先在本地初始化为 Git 项目，添加要管理的文件并作首次提交：
 
@@ -941,8 +934,7 @@ $ git push origin master
 
 现在该项目就托管在 GitHub 上了。你可以把它的 URL 分享给每位对此项目感兴趣的人。本例的 URL 是http://github.com/testinguser/iphone_project。而在项目页面的摘要部分，你会发现有两个 Git URL 地址（见下图：项目摘要中的公共 URL 和私有 URL）：
 
-![Image of github_7]		
-(images/github_7.png) 
+![Image of github_7](images/github_7.png) 
 
 Public Clone URL 是一个公开的，只读的 Git URL，任何人都可以通过它克隆该项目。可以随意散播这个 URL，比如发布到个人网站之类的地方等等。
 
@@ -952,8 +944,7 @@ Your Clone URL 是一个基于 SSH 协议的可读可写 URL，只有使用与�
 
 如果想把某个公共 Subversion 项目导入 Git，GitHub 可以帮忙。在指南的最后有一个指向导入 Subversion 页面的链接。点击它会看到一个表单，包含有关导入流程的信息以及一个用来粘贴公共 Subversion 项目连接的文本框（见下图：Subversion 导入界面）：
 
-![Image of github_8]		
-(images/github_8.png) 
+![Image of github_8](images/github_8.png) 
 
 如果项目很大，采用非标准结构，或者是私有的，那就无法借助该工具实现导入。到第 7 章，我们会介绍如何手工导入复杂工程的具体方法。
 
@@ -963,18 +954,15 @@ Your Clone URL 是一个基于 SSH 协议的可读可写 URL，只有使用与�
 
 点击项目页面上方的 “edit” 按钮或者顶部的 Admin 标签，进入该项目的管理页面（见下图：GitHub 的项目管理页面）：
 
-![Image of github_9]		
-(images/github_9.png) 
+![Image of github_9](images/github_9.png) 
 
 为了给另一个用户添加项目的写权限，点击 “Add another collaborator” 链接，出现一个用于输入用户名的表单。在输入的同时，它会自动跳出一个符合条件的候选名单。找到正确用户名之后，点 Add 按钮，把该用户设为项目协作者（见下图：为项目添加协作者）：
 
-![Image of github_10]		
-(images/github_10.png) 
+![Image of github_10](images/github_10.png) 
 
 添加完协作者之后，就可以在 Repository Collaborators 区域看到他们的名单（见下图：项目协作者名单）：
 
-![Image of github_11]		
-(images/github_11.png) 
+![Image of github_11](images/github_11.png) 
 
 如果要取消某人的访问权，点击 “revoke” 即可取消他的推送权限。对于将来的项目，你可以从现有项目复制协作者名单，或者直接借用协作者群组。
 
@@ -982,8 +970,7 @@ Your Clone URL 是一个基于 SSH 协议的可读可写 URL，只有使用与�
 
 在推送或从 Subversion 导入项目之后，你会看到一个类似下图GitHub 上的项目主页 的项目主页：
 
-![Image of github_12]		
-(images/github_12.png) 
+![Image of github_12](images/github_12.png) 
 
 别人访问你的项目时看到的就是这个页面。它有若干导航标签，Commits 标签用于显示提交历史，最新的提交位于最上方，这和 git log 命令的输出类似。Network 标签展示所有派生了该项目并做出贡献的用户的关系图谱。Downloads 标签允许你上传项目的二进制文件，提供下载该项目各个版本的 tar/zip 包。Wiki 标签提供了一个用于撰写文档或其他项目相关信息的 wiki 站点。Graphs 标签包含了一些可视化的项目信息与数据。默认打开的 Source 标签页面，则列出了该项目的目录结构和概要信息，并在下方自动展示 README 文件的内容（如果该文件存在的话），此外还会显示最近一次提交的相关信息。
 
@@ -995,13 +982,11 @@ Your Clone URL 是一个基于 SSH 协议的可读可写 URL，只有使用与�
 
 要派生一个项目，到原始项目的页面（本例中是 mojombo/chronic）点击 “fork” 按钮（见下图：点击 “fork” 按钮获得任意项目的可写副本）：
 
-![Image of github_13]		
-(images/github_13.png) 
+![Image of github_13](images/github_13.png) 
  
 几秒钟之后，你将进入新建的项目页面，会显示该项目派生自哪一个项目（见下图：派生后得到的项目副本）：
 
-![Image of github_14]		
-(images/github_14.png) 
+![Image of github_14](images/github_14.png) 
  
 ## 4.GitHub 小结
 关于 GitHub 就先介绍这么多，能够快速达成这些事情非常重要（译注：门槛的降低和完成基本任务的简单高效，对于推动开源项目的协作发展有着举足轻重的意义。）。短短几 分钟内，你就能创建一个新账户，添加一个项目并开始推送。如果项目是开源的，整个庞大的开发者社区都可以立即访问它，提供各式各样的帮助和贡献。最起码， 这也是一种 Git 新手立即体验尝试 Git 的捷径。

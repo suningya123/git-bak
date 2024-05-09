@@ -142,8 +142,7 @@ a11bef0 - Scott Chacon, 11 months ago : first commit
 
 下表：表 1 列出了常用的格式占位符写法及其代表的意义。
 
-![Image of list_1]		
-(images/list_1.png)
+![Image of list_1](images/list_1.png)
 
 你一定奇怪_作者（author）_和_提交者（committer）_之间究竟有何差别，其实作者指的是实际作出修改的人，提交者指的是最后将此 工作成果提交到仓库的人。所以，当你为某个项目发布补丁，然后某个核心成员将你的补丁并入项目时，你就是作者，而那个核心成员就是提交者。我们会在第五章 再详细介绍两者之间的细微差别。
 
@@ -165,6 +164,5 @@ $ git log --pretty=format:"%h %s" --graph
 
 以上只是简单介绍了一些 git log 命令支持的选项。下表：表 2 还列出了一些其他常用的选项及其释义。
 
-![Image of list_2]		
-(images/list_2.png)
+![Image of list_2](images/list_2.png)
 
